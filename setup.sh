@@ -56,6 +56,12 @@ pip install gguf -q
 # install HF CLI mới
 pip install -U huggingface_hub -q
 
+# Install model-specific packages with --no-deps to avoid strict version locks (like torch or av)
+pip install --no-deps audiocraft fish-speech -q
+
+# Install remaining dependencies needed by audiocraft and fish-speech
+pip install torchaudio soundfile librosa loguru lightning hydra-core vector-quantize-pytorch -q
+
 # ─────────────────────────────────────────
 # Node deps
 # ─────────────────────────────────────────

@@ -4,7 +4,7 @@ Flux Model Wrapper
 RTX 3090 optimized image generation
 """
 import torch
-from diffusers import FluxPipeline, StableDiffusionImg2ImgPipeline
+from diffusers import FluxPipeline, FluxImg2ImgPipeline
 from PIL import Image
 from pathlib import Path
 import json
@@ -74,7 +74,6 @@ class FluxModel:
         
         image = self.pipe_txt2img(
             prompt=prompt,
-            negative_prompt="blurry, low quality, distorted, watermark",
             num_inference_steps=steps,
             guidance_scale=guidance,
             width=width,
@@ -89,11 +88,17 @@ class FluxModel:
                                  strength=0.5, seed=None):
         """Generate image với reference (img2img)"""
         if self.pipe_img2img is None:
-            self.pipe_img2img = StableDiffusionImg2ImgPipeline.from_pretrained(
-                self.model_path,
-                torch_dtype=torch.float16
-            )
-            self.pipe_img2img = self.pipe_img2img.to(self.device)
+            if self.pipe_txt2img is None:
+                self.load()
+            self.pipe_img2img = FluxImg2ImgPipeline(
+                vae=self.pipe_txt2img.vae,
+                text_encoder=self.pipe_txt2img.text_encoder,
+                text_encoder_2=self.pipe_txt2img.text_encoder_2,
+                tokenizer=self.pipe_txt2img.tokenizer,
+                tokenizer_2=self.pipe_txt2img.tokenizer_2,
+                transformer=self.pipe_txt2img.transformer,
+                scheduler=self.pipe_txt2img.scheduler,
+            ).to(self.device)
         
         gen_seed = seed or self.seed
         
@@ -101,9 +106,7 @@ class FluxModel:
             prompt=prompt,
             image=reference_image,
             strength=strength,
-            negative_prompt="blurry, distorted, inconsistent",
             num_inference_steps=30,
-            guidance_scale=7.5,
             generator=torch.Generator().manual_seed(gen_seed)
         ).images[0]
         

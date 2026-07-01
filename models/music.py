@@ -36,8 +36,8 @@ class MusicGenModel:
         self.model.set_generation_params(duration=duration)
         
         wav = self.model.generate([prompt])
-        
-        sf.write(str(output_path), wav[0].cpu().numpy(), 32000)
+        audio_data = wav[0].cpu().numpy().T
+        sf.write(str(output_path), audio_data, 32000)
         
         print(f"  Saved: {output_path}")
         return output_path
