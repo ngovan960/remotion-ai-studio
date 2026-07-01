@@ -34,8 +34,17 @@ class WanModel:
             
         self.pipe = self.pipe.to(self.device)
         
-        # RTX 3090 optimizations
-        self.pipe.enable_model_cpu_offload()
+        # Dynamic VRAM optimization: Enable CPU offload only if VRAM < 26 GB (e.g. RTX 3090)
+        try:
+            vram_gb = torch.cuda.get_device_properties(self.device).total_memory / (1024**3)
+            if vram_gb < 26.0:
+                print("  VRAM < 26GB (RTX 3090 mode). Enabling CPU offload to save memory...")
+                self.pipe.enable_model_cpu_offload()
+            else:
+                print(f"  VRAM = {vram_gb:.1f}GB (RTX 5090/4090 mode). Keeping model fully in VRAM for maximum speed...")
+        except Exception as e:
+            print(f"  Could not read GPU properties ({e}). Defaulting to CPU offload...")
+            self.pipe.enable_model_cpu_offload()
         
         print("Wan 2.2 5B loaded!")
         print("  Mode: FP8")
