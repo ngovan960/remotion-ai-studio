@@ -1,0 +1,89 @@
+scene:
+  type: psychological
+  title: "The Mirror Reflection"
+  horror_element: "Reality distortion"
+  setting: "Bathroom at night"
+  atmosphere: "Paranoia, unreliable perception"
+  
+visual:
+  style: "subtle_horror"
+  elements:
+    - type: "normal_shot"
+      content: "Bathroom mirror, character's reflection"
+      details: "Normal, well-lit, safe"
+      lighting: "Bright, clinical"
+      duration: 4s
+    - type: "subtle_change"
+      content: "Reflection slightly delayed"
+      details: "Fraction of a second behind"
+      lighting: "Same"
+      duration: 3s
+    - type: "wrongness"
+      content: "Reflection blinks when character doesn't"
+      details: "Almost imperceptible"
+      lighting: "Same"
+      duration: 2s
+    - type: "distortion"
+      content: "Reflection smiles when character doesn't"
+      details: "Clear, deliberate"
+      lighting: "Slight flicker"
+      duration: 2s
+    - type: "revelation"
+      content: "Character turns, reflection stays"
+      details: "Reflection watches them leave"
+      lighting: "Normal"
+      duration: 3s
+    - type: "final_horror"
+      content: "Empty bathroom, mirror shows figure"
+      details: "Standing in doorway, watching"
+      lighting: "Dim"
+      duration: 4s
+
+camera:
+  movement: "static_then_slow_pan"
+  direction: "mirror_focused"
+  speed: 0.1
+  shake: "none"
+  focus: "mirror_area"
+
+audio:
+  voiceover:
+    content: |
+      "Something's wrong with the mirror.
+      My reflection isn't... right.
+      It's not me anymore.
+      I need to leave."
+    pace: "slow_then_urgent"
+    tone: "confused_then_terrified"
+    effects: "echo_in_bathroom"
+  music:
+    type: "unsettling_ambient"
+    elements: ["dissonant_piano", "high_drone"]
+    volume: -16
+    build: "subtle"
+  sfx:
+    - type: "water_dripping"
+      volume: -20
+      rhythm: "steady"
+    - type: "breathing"
+      volume: -14
+      source: "character"
+    - type: "reflection_breathing"
+      volume: -12
+      source: "mirror"
+      timing: "off_sync"
+    - type: "footsteps"
+      volume: -10
+      timing: "leaving"
+    - type: "silence"
+      volume: -40
+      timing: "final_moment"
+
+duration: 18
+render_quality: "high"
+fear_factors:
+  - "Reality distortion"
+  - "Unreliable perception"
+  - "Paranoia"
+  - "Body horror (subtle)"
+  - "Isolation"

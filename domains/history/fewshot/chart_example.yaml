@@ -1,0 +1,75 @@
+scene:
+  type: chart
+  title: "Industrial Revolution Population Growth"
+  time_period: "1760-1840"
+  
+visual:
+  style: "animated_line_chart"
+  chart_type: "line"
+  data:
+    - year: 1760
+      value: 6.5
+      label: "Pre-Industrial"
+    - year: 1780
+      value: 7.5
+      label: "Early Industrial"
+    - year: 1800
+      value: 9.0
+      label: "Mechanization"
+    - year: 1820
+      value: 12.0
+      label: "Factory System"
+    - year: 1840
+      value: 15.5
+      label: "Peak Growth"
+  axes:
+    x:
+      label: "Year"
+      format: "year"
+    y:
+      label: "Population (millions)"
+      format: "number"
+  labels: true
+  legend: true
+  annotations:
+    - year: 1760
+      text: "Spinning Jenny invented"
+    - year: 1780
+      text: "Steam engine improved"
+    - year: 1800
+      text: "Power loom developed"
+
+camera:
+  movement: "slow_pan"
+  direction: "left_to_right"
+  speed: 0.25
+  focus: "data_points"
+
+audio:
+  music:
+    type: "industrial_ambient"
+    instruments: ["mechanical_rhythms", "steam_sounds"]
+    mood: "progressive"
+    volume: -14
+  sfx:
+    - type: "factory_machinery"
+      volume: -18
+    - type: "steam_whistles"
+      volume: -22
+
+chart:
+  animation:
+    type: "data_reveal"
+    speed: "moderate"
+    sequence:
+      - "year_by_year"
+      - "highlight_peaks"
+      - "show_trend_line"
+  colors:
+    primary: "industrial_blue"
+    secondary: "steam_white"
+    highlight: "progress_gold"
+  style: "period_appropriate"
+
+duration: 10
+render_quality: "high"

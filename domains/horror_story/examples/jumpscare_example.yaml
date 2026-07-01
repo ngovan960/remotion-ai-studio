@@ -1,0 +1,84 @@
+scene:
+  type: jumpscare
+  title: "The Door Opens"
+  horror_element: "Entity appears"
+  setting: "Bedroom at night"
+  atmosphere: "False safety, then shock"
+  
+visual:
+  style: "horror_cinematic"
+  elements:
+    - type: "setup_shot"
+      content: "Bedroom door slightly ajar"
+      details: "Darkness beyond, nothing visible"
+      lighting: "Moonlight from window"
+      duration: 6s
+    - type: "build_shot"
+      content: "Slow push toward door"
+      details: "Door creaks open slightly"
+      lighting: "Flickering hallway light"
+      duration: 4s
+    - type: "false_safety"
+      content: "Door opens fully, nothing there"
+      details: "Empty hallway visible"
+      lighting: "Stable light"
+      duration: 2s
+    - type: "jumpscare"
+      content: "Figure rushes from darkness"
+      details: "Quick flash, then black"
+      lighting: "Strobe effect"
+      duration: 0.5s
+    - type: "aftermath"
+      content: "Empty room, door closed"
+      details: "Something wrong with details"
+      lighting: "Dim, wrong color"
+      duration: 3s
+
+camera:
+  movement: "slow_push"
+  direction: "toward_door"
+  speed: 0.1
+  shake: "none_then_violent"
+  focus: "pull_to_door"
+  jumpscare: "quick_zoom_in"
+
+audio:
+  voiceover:
+    content: |
+      "The door is open.
+      Nothing's there.
+      It's safe.
+      WAIT-"
+    pace: "slow_then_interrupted"
+    tone: "calm_then_terrified"
+    effects: "none_then_distorted"
+  music:
+    type: "building_tension"
+    elements: ["rising_strings", "heartbeat"]
+    volume: -18
+    build: "gradual_then_cut"
+  sfx:
+    - type: "door_creak"
+      volume: -12
+      timing: "during_open"
+    - type: "silence"
+      volume: -40
+      timing: "false_safety"
+    - type: "impact_sound"
+      volume: 0
+      timing: "jumpscare"
+    - type: "ringing_ears"
+      volume: -8
+      timing: "aftermath"
+    - type: "distant_laughter"
+      volume: -24
+      timing: "final_moment"
+
+duration: 15
+render_quality: "high"
+fear_factors:
+  - "Anticipation"
+  - "False safety"
+  - "Sudden shock"
+  - "Lingering dread"
+  - "Unresolved ending"

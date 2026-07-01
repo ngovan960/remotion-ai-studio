@@ -1,0 +1,42 @@
+name: diagram
+description: "Diagram visualization for concepts, flows, hierarchies, and relationships"
+version: "1.0.0"
+
+asset_types:
+  - diagram_nodes
+  - connection_lines
+  - icons
+  - labels
+
+camera_rules:
+  - type: static
+    description: "Hold on complete diagram for understanding"
+  - type: dolly
+    direction: in
+    speed: slow
+    description: "Zoom into specific node cluster"
+  - type: orbit
+    speed: slow
+    description: "Orbit around 3D diagram"
+  - type: pan
+    direction: horizontal
+    speed: slow
+    description: "Pan across wide diagrams"
+
+prompt_template: |
+  [Diagram type] visualization:
+  - Concept: [main concept]
+  - Elements: [node list]
+  - Connections: [relationship types]
+  - Layout: [layout algorithm]
+  - Style: [visual style]
+  - Animation: [build type]
+  - Duration: [seconds]s
+
+domains:
+  - software_architecture
+  - business_processes
+  - education
+  - science
+  - organizational_structure
+  - decision_trees

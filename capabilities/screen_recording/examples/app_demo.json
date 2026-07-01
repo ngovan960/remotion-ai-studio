@@ -1,0 +1,42 @@
+{
+  "type": "screen_recording",
+  "application": "Web Dashboard",
+  "resolution": {"width": 1920, "height": 1080},
+  "fps": 30,
+  "steps": [
+    {
+      "action": "navigate",
+      "target": "Login page",
+      "cursor": "pointer",
+      "duration": 2.0
+    },
+    {
+      "action": "click",
+      "target": "Email input",
+      "cursor": "text",
+      "annotation": {"type": "callout", "text": "Enter email"},
+      "duration": 1.5
+    },
+    {
+      "action": "type",
+      "target": "user@example.com",
+      "cursor": "text",
+      "duration": 2.0
+    },
+    {
+      "action": "click",
+      "target": "Login button",
+      "cursor": "pointer",
+      "indicator": "ripple",
+      "duration": 1.0
+    }
+  ],
+  "camera": {
+    "initial": "full_screen",
+    "transitions": ["zoom_to_element"]
+  },
+  "annotations": {
+    "style": "callout",
+    "color": "#2196F3"
+  }
+}

@@ -1,0 +1,62 @@
+domain: horror_story
+version: 1.0.0
+description: Horror narrative domain for scary stories, creepypastas, and horror content
+
+asset_strategy:
+  image_sources:
+    - dark_photography
+    - horror_art
+    - generated_horror
+    - stock_dark
+    - ai_generated
+  video_sources:
+    - horror_scenes
+    - dark_ambient
+    - jump_scare_sequences
+    - photo_montages
+  style: dark_atmospheric
+  color_palette: dark_desaturated
+  text_overlay: minimal_eerie
+
+camera_rules:
+  default_movement: slow_creep
+  transitions:
+    - fade_to_black
+    - glitch
+    - static
+    - quick_cut
+  speed: variable
+  shake: subtle
+  parallax: dramatic
+
+audio_rules:
+  background_music:
+    - dark_ambient
+    - horror_soundscapes
+    - minimal_piano
+    - dissonant_strings
+  sfx:
+    - creaking
+    - whispers
+    - heartbeat
+    - sudden_impacts
+  voiceover: required
+  music_volume: -8dB
+  voiceover_volume: -6dB
+  jump_scare_volume: 0dB
+
+render_rules:
+  resolution: 1920x1080
+  fps: 24
+  codec: h264
+  quality: high
+  duration_per_scene: 6-12s
+  max_duration: 180s
+
+quality_rules:
+  min_image_resolution: 1920x1080
+  text_readability: required
+  audio_sync: mandatory
+  pacing: deliberate
+  engagement_check: required
+  fear_factor_check: required

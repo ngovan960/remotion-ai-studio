@@ -1,0 +1,118 @@
+# AI Documentary Pack — Manifest
+
+## Thông Tin
+
+| Field | Value |
+|-------|-------|
+| **name** | documentary_pack |
+| **version** | 1.0.0 |
+| **description** | Complete AI Documentary production pack |
+| **author** | Remotion AI Studio |
+
+## Supported Capabilities
+
+- timeline
+- map
+- chart
+- portrait
+- archive
+- stock
+
+## Asset Strategy
+
+```yaml
+asset_priority:
+  - reuse
+  - cache
+  - stock
+  - generate
+
+images_per_minute: 6
+video_clips_per_minute: 1
+charts_per_minute: 1
+stock_usage: 0.3
+
+# Asset allocation
+allocation:
+  images: 50%
+  stock: 30%
+  video_clips: 15%
+  charts: 5%
+```
+
+## Camera Rules
+
+```yaml
+camera:
+  default: medium_shot
+  transitions:
+    - crossfade
+    - dissolve
+    - fade_to_black
+  movements:
+    - slow_zoom
+    - pan_left
+    - pan_right
+    - dolly_in
+  angles:
+    - eye_level
+    - low_angle
+    - high_angle
+  patterns:
+    establishing: wide_shot
+    detail: close_up
+    action: medium_shot
+    transition: dissolve
+```
+
+## Audio Rules
+
+```yaml
+audio:
+  music:
+    mood: epic
+    tempo: 100-120
+    key: minor
+    instruments: [orchestra, strings, piano]
+  
+  sfx:
+    types:
+      - transition
+      - impact
+      - ambient
+      - nature
+  
+  voice:
+    speed: normal
+    tone: authoritative
+    language: vi-VN
+```
+
+## Render Rules
+
+```yaml
+render:
+  style: cinematic
+  resolution: 1920x1080
+  fps: 30
+  codec: h264
+  bitrate: 8M
+  
+  effects:
+    - ken_burns
+    - crossfade
+    - text_overlay
+    - subtitle
+```
+
+## Quality Rules
+
+```yaml
+quality:
+  minimum_prompt_score: 7
+  minimum_image_score: 6
+  minimum_audio_score: 6
+  require_continuity: true
+  require_color_script: true
+  require_broll: true
+```

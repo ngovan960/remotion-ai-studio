@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#1a1a2e"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" fill="white" text-anchor="middle" font-weight="bold">
+    SO SÁNH: AI IMAGE vs AI VIDEO vs SVG
+  </text>
+  
+  <!-- Header Row -->
+  <rect x="50" y="70" width="200" height="40" fill="#2c3e50" rx="5"/>
+  <text x="150" y="95" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Asset Type</text>
+  
+  <rect x="270" y="70" width="150" height="40" fill="#2c3e50" rx="5"/>
+  <text x="345" y="95" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">GPU Cost</text>
+  
+  <rect x="440" y="70" width="150" height="40" fill="#2c3e50" rx="5"/>
+  <text x="515" y="95" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Quality</text>
+  
+  <rect x="610" y="70" width="150" height="40" fill="#2c3e50" rx="5"/>
+  <text x="685" y="95" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Use For</text>
+  
+  <!-- Row 1: AI Image -->
+  <rect x="50" y="130" width="200" height="50" fill="#3498db" rx="5"/>
+  <text x="150" y="160" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">AI IMAGE</text>
+  <text x="150" y="175" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">Flux.1 Dev</text>
+  
+  <rect x="270" y="130" width="150" height="50" fill="#27ae60" rx="5"/>
+  <text x="345" y="160" font-family="Arial" font-size="14" fill="white" text-anchor="middle">LOW</text>
+  <text x="345" y="175" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">~$0.003/image</text>
+  
+  <rect x="440" y="130" width="150" height="50" fill="#27ae60" rx="5"/>
+  <text x="515" y="160" font-family="Arial" font-size="14" fill="white" text-anchor="middle">HIGH</text>
+  <text x="515" y="175" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">Photorealistic</text>
+  
+  <rect x="610" y="130" width="150" height="50" fill="#3498db" rx="5"/>
+  <text x="685" y="155" font-family="Arial" font-size="11" fill="white" text-anchor="middle">Character</text>
+  <text x="685" y="170" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">Detail, Portrait</text>
+  
+  <!-- Row 2: AI Video -->
+  <rect x="50" y="200" width="200" height="50" fill="#e74c3c" rx="5"/>
+  <text x="150" y="230" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">AI VIDEO</text>
+  <text x="150" y="245" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">Wan 2.2</text>
+  
+  <rect x="270" y="200" width="150" height="50" fill="#e74c3c" rx="5"/>
+  <text x="345" y="230" font-family="Arial" font-size="14" fill="white" text-anchor="middle">HIGH</text>
+  <text x="345" y="245" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">~$0.13/clip</text>
+  
+  <rect x="440" y="200" width="150" height="50" fill="#27ae60" rx="5"/>
+  <text x="515" y="230" font-family="Arial" font-size="14" fill="white" text-anchor="middle">HIGHEST</text>
+  <text x="515" y="245" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">Motion + Detail</text>
+  
+  <rect x="610" y="200" width="150" height="50" fill="#e74c3c" rx="5"/>
+  <text x="685" y="225" font-family="Arial" font-size="11" fill="white" text-anchor="middle">Action</text>
+  <text x="685" y="240" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">Movement, Impact</text>
+  
+  <!-- Row 3: SVG -->
+  <rect x="50" y="270" width="200" height="50" fill="#2ecc71" rx="5"/>
+  <text x="150" y="300" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">SVG DIAGRAM</text>
+  <text x="150" y="315" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">Code-generated</text>
+  
+  <rect x="270" y="270" width="150" height="50" fill="#27ae60" rx="5"/>
+  <text x="345" y="300" font-family="Arial" font-size="14" fill="white" text-anchor="middle">FREE</text>
+  <text x="345" y="315" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">$0</text>
+  
+  <rect x="440" y="270" width="150" height="50" fill="#f39c12" rx="5"/>
+  <text x="515" y="300" font-family="Arial" font-size="14" fill="white" text-anchor="middle">MEDIUM</text>
+  <text x="515" y="315" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">Clean, Scalable</text>
+  
+  <rect x="610" y="270" width="150" height="50" fill="#2ecc71" rx="5"/>
+  <text x="685" y="295" font-family="Arial" font-size="11" fill="white" text-anchor="middle">Charts</text>
+  <text x="685" y="310" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">Timeline, Data</text>
+  
+  <!-- Row 4: Stock -->
+  <rect x="50" y="340" width="200" height="50" fill="#f39c12" rx="5"/>
+  <text x="150" y="370" font-family="Arial" font-size="14" fill="white" text-anchor="middle" font-weight="bold">STOCK</text>
+  <text x="150" y="385" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">Pexels/Pixabay</text>
+  
+  <rect x="270" y="340" width="150" height="50" fill="#27ae60" rx="5"/>
+  <text x="345" y="370" font-family="Arial" font-size="14" fill="white" text-anchor="middle">FREE</text>
+  <text x="345" y="385" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">$0</text>
+  
+  <rect x="440" y="340" width="150" height="50" fill="#27ae60" rx="5"/>
+  <text x="515" y="370" font-family="Arial" font-size="14" fill="white" text-anchor="middle">HIGH</text>
+  <text x="515" y="385" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">Real footage</text>
+  
+  <rect x="610" y="340" width="150" height="50" fill="#f39c12" rx="5"/>
+  <text x="685" y="365" font-family="Arial" font-size="11" fill="white" text-anchor="middle">Landscape</text>
+  <text x="685" y="380" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">Establishing</text>
+  
+  <!-- Legend -->
+  <text x="400" y="430" font-family="Arial" font-size="12" fill="#888" text-anchor="middle">
+    GPU Cost: GREEN=Free | YELLOW=Low | RED=High
+  </text>
+  
+  <text x="400" y="460" font-family="Arial" font-size="12" fill="#888" text-anchor="middle">
+    Chọn asset phù hợp để tối ưu GPU và chi phí
+  </text>
+</svg>

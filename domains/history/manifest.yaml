@@ -1,0 +1,99 @@
+domain: history
+version: 1.0.0
+description: Historical documentary domain with timeline, map, and chart capabilities
+parent: documentary
+
+inherits:
+  - asset_strategy
+  - camera_rules
+  - audio_rules
+  - render_rules
+  - quality_rules
+
+extensions:
+  timeline:
+    enabled: true
+    types:
+      - linear
+      - branching
+      - comparative
+    features:
+      - zoom
+      - pan
+      - annotations
+      - highlights
+
+  maps:
+    enabled: true
+    types:
+      - political
+      - geographical
+      - thematic
+      - animated
+    features:
+      - zoom
+      - layers
+      - markers
+      - routes
+
+  charts:
+    enabled: true
+    types:
+      - bar
+      - line
+      - pie
+      - scatter
+      - infographic
+    features:
+      - animation
+      - labels
+      - legends
+      - data_points
+
+asset_strategy:
+  additional_sources:
+    - historical_archives
+    - museums
+    - libraries
+    - academic_databases
+  image_sources:
+    - archival_photographs
+    - historical_maps
+    - period_artwork
+    - generated_illustrations
+  style: period_accurate
+  color_palette: era_appropriate
+
+camera_rules:
+  additional_movements:
+    - timeline_scrub
+    - map_flyover
+    - chart_zoom
+  transitions:
+    - era_transition
+    - location_shift
+    - data_reveal
+
+audio_rules:
+  additional_music:
+    - period_music
+    - cultural_instruments
+    - ambient_historical
+  sfx:
+    - period_sounds
+    - map_sounds
+    - data_sounds
+
+render_rules:
+  additional_features:
+    - timeline_overlay
+    - map_integration
+    - chart_animation
+    - era_specific_effects
+
+quality_rules:
+  additional_checks:
+    - historical_accuracy
+    - period_consistency
+    - source_citation
+    - cultural_sensitivity

@@ -1,0 +1,70 @@
+scene:
+  type: atmosphere
+  title: "The Abandoned Hospital"
+  horror_element: "Empty hallway with presence"
+  setting: "Abandoned hospital at night"
+  atmosphere: "Oppressive silence, wrongness"
+  
+visual:
+  style: "dark_photography"
+  elements:
+    - type: "establishing_shot"
+      content: "Hospital exterior at night"
+      details: "Broken windows, overgrown vegetation"
+      lighting: "Moonlight only"
+    - type: "interior_shot"
+      content: "Long dark hallway"
+      details: "Flickering light at far end, wheelchairs overturned"
+      lighting: "Flickering fluorescent"
+    - type: "detail_shot"
+      content: "Door slightly ajar"
+      details: "Darkness visible, nothing moving"
+      lighting: "Flashlight beam"
+    - type: "reaction_shot"
+      content: "Character's face in shadow"
+      details: "Eyes wide, breathing visible"
+      lighting: "Flashlight reflection"
+
+camera:
+  movement: "slow_creep"
+  direction: "forward"
+  speed: 0.15
+  shake: "subtle_handheld"
+  focus: "pull_to_darkness"
+
+audio:
+  voiceover:
+    content: |
+      "I shouldn't have come here.
+      The silence is wrong.
+      Too quiet for an abandoned place.
+      Something is watching."
+    pace: "slow_whisper"
+    tone: "terrified"
+    effects: "slight_reverb"
+  music:
+    type: "dark_ambient"
+    elements: ["low_drone", "dissonant_strings"]
+    volume: -18
+    build: "gradual"
+  sfx:
+    - type: "dripping_water"
+      volume: -24
+      rhythm: "steady"
+    - type: "distant_creak"
+      volume: -20
+      timing: "random"
+    - type: "faint_whisper"
+      volume: -28
+      timing: "subliminal"
+    - type: "heartbeat"
+      volume: -16
+      pace: "accelerating"
+
+duration: 10
+render_quality: "high"
+fear_factors:
+  - "Isolation"
+  - "Wrongness"
+  - "Unseen presence"
+  - "Building dread"

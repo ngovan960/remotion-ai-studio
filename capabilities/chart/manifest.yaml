@@ -1,0 +1,43 @@
+name: chart
+description: "Chart and graph visualization for data presentation, statistics, and comparisons"
+version: "1.0.0"
+
+asset_types:
+  - chart_data
+  - axis_labels
+  - legend_icons
+  - data_points
+
+camera_rules:
+  - type: static
+    description: "Hold on complete chart for readability"
+  - type: dolly
+    direction: in
+    speed: slow
+    description: "Zoom into specific data region"
+  - type: pan
+    direction: horizontal
+    speed: slow
+    description: "Pan across time-series data"
+  - type: tilt
+    direction: up
+    speed: slow
+    description: "Reveal tall bar charts"
+
+prompt_template: |
+  [Chart type] visualization:
+  - Data: [dataset description]
+  - X-axis: [x label]
+  - Y-axis: [y label]
+  - Style: [visual style]
+  - Colors: [color scheme]
+  - Annotations: [annotations]
+  - Duration: [seconds]s
+
+domains:
+  - finance
+  - statistics
+  - science
+  - business_reports
+  - education
+  - sports_analytics

@@ -1,0 +1,42 @@
+name: code
+description: "Code visualization for syntax highlighting, code walkthroughs, and programming tutorials"
+version: "1.0.0"
+
+asset_types:
+  - code_snippets
+  - syntax_highlights
+  - line_numbers
+  - annotations
+
+camera_rules:
+  - type: static
+    description: "Hold on code block for reading"
+  - type: dolly
+    direction: in
+    speed: slow
+    description: "Zoom into specific function/block"
+  - type: pan
+    direction: vertical
+    speed: slow
+    description: "Scroll through long code"
+  - type: tilt
+    direction: down
+    speed: medium
+    description: "Reveal code from top"
+
+prompt_template: |
+  [Language] code visualization:
+  - Code: [code snippet]
+  - Highlight: [highlighted lines/keywords]
+  - Theme: [color theme]
+  - Font: [monospace font]
+  - Annotations: [annotations]
+  - Animation: [reveal type]
+  - Duration: [seconds]s
+
+domains:
+  - programming_tutorials
+  - software_documentation
+  - tech_explainers
+  - code_reviews
+  - algorithm_visualization

@@ -1,0 +1,40 @@
+name: map
+description: "Map visualization for geographic data, routes, and location-based content"
+version: "1.0.0"
+
+asset_types:
+  - map_tiles
+  - marker_icons
+  - route_lines
+  - heat_data
+
+camera_rules:
+  - type: orbit
+    description: "Orbit around map region for overview"
+  - type: dolly
+    direction: in
+    speed: medium
+    description: "Zoom into specific location"
+  - type: crane
+    direction: up
+    speed: slow
+    description: "Rise to show full map context"
+  - type: static
+    description: "Hold on map with animated markers"
+
+prompt_template: |
+  [Camera] shot of [map type] map:
+  - Region: [geographic area]
+  - Data: [data points/routes]
+  - Style: [map style]
+  - Markers: [marker types]
+  - Animation: [animation type]
+  - Duration: [seconds]s
+
+domains:
+  - travel
+  - logistics
+  - weather
+  - demographics
+  - historical_routes
+  - story_locations

@@ -1,0 +1,30 @@
+{
+  "type": "diagram",
+  "diagram_type": "flowchart",
+  "layout": "hierarchical",
+  "nodes": [
+    {"id": "start", "label": "Start", "type": "terminal", "color": "#4CAF50"},
+    {"id": "input", "label": "User Input", "type": "data", "color": "#9C27B0"},
+    {"id": "validate", "label": "Valid?", "type": "decision", "color": "#FF9800"},
+    {"id": "process", "label": "Process", "type": "process", "color": "#2196F3"},
+    {"id": "error", "label": "Show Error", "type": "process", "color": "#F44336"},
+    {"id": "end", "label": "End", "type": "terminal", "color": "#4CAF50"}
+  ],
+  "connections": [
+    {"from": "start", "to": "input", "type": "solid"},
+    {"from": "input", "to": "validate", "type": "solid"},
+    {"from": "validate", "to": "process", "label": "Yes", "type": "solid"},
+    {"from": "validate", "to": "error", "label": "No", "type": "dashed"},
+    {"from": "process", "to": "end", "type": "solid"},
+    {"from": "error", "to": "input", "type": "dashed"}
+  ],
+  "camera": {
+    "initial": "overview",
+    "transitions": ["zoom_to_nodes", "highlight_path"]
+  },
+  "animation": {
+    "reveal": "sequential",
+    "node_delay": 0.3,
+    "connection_delay": 0.2
+  }
+}

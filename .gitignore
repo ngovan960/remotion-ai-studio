@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# AI Models (too large for git)
+modelAI/
+
+# Cache
+cache/
+
+# Generated assets
+*.mp4
+*.wav
+*.png
+assets/
+
+# Metadata (generated)
+metadata/
+
+# Node.js
+node_modules/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+
+# Output binaries
+output/*.mp4
+output/*.wav

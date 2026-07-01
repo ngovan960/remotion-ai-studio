@@ -1,0 +1,74 @@
+scene:
+  type: code_tutorial
+  title: "Python Function Basics"
+  learning_objective: "Create reusable code with functions"
+  audience_level: "beginner"
+  
+visual:
+  style: "code_editor"
+  elements:
+    - type: "title_slide"
+      content: "Python Functions"
+      subtitle: "Learn to create reusable code"
+    - type: "code_editor"
+      language: "python"
+      code: |
+        def greet(name):
+            """Say hello to someone"""
+            return f"Hello, {name}!"
+        
+        # Call the function
+        message = greet("World")
+        print(message)
+      highlights:
+        - line: 1
+          color: "blue"
+          annotation: "Function definition"
+        - line: 3
+          color: "green"
+          annotation: "Docstring"
+        - line: 6
+          color: "yellow"
+          annotation: "Function call"
+    - type: "output_display"
+      content: "Hello, World!"
+    - type: "summary_slide"
+      points:
+        - "Functions start with 'def'"
+        - "Parameters go in parentheses"
+        - "Return values with 'return'"
+        - "Call functions by name"
+
+camera:
+  movement: "static"
+  focus: "code_area"
+  zoom: "appropriate"
+
+audio:
+  voiceover:
+    content: |
+      "Functions are reusable blocks of code.
+      Let's create our first Python function.
+      We start with 'def' followed by the function name.
+      Parameters go in parentheses.
+      The function body is indented.
+      We return the result.
+      Now let's call our function."
+    pace: "moderate"
+    tone: "encouraging"
+  music:
+    type: "lofi_study"
+    volume: -18
+  sfx:
+    - type: "keyboard_typing"
+      timing: "during_code_entry"
+    - type: "success_chime"
+      timing: "after_output"
+
+duration: 12
+render_quality: "high"
+learning_checkpoints:
+  - "Understanding function syntax"
+  - "Writing docstrings"
+  - "Calling functions"
+  - "Returning values"

@@ -1,0 +1,39 @@
+name: screen_recording
+description: "Screen recording visualization for app demos, tutorials, and UI walkthroughs"
+version: "1.0.0"
+
+asset_types:
+  - screen_captures
+  - cursor_overlay
+  - click_indicators
+  - text_annotations
+
+camera_rules:
+  - type: static
+    description: "Hold on screen for viewing"
+  - type: dolly
+    direction: in
+    speed: medium
+    description: "Zoom into UI element"
+  - type: pan
+    direction: horizontal
+    speed: slow
+    description: "Pan across wide interfaces"
+  - type: follow_cursor
+    description: "Follow mouse movement"
+
+prompt_template: |
+  Screen recording visualization:
+  - Application: [app name/type]
+  - Action: [user action]
+  - Focus: [UI element]
+  - Cursor: [cursor style]
+  - Annotations: [annotations]
+  - Duration: [seconds]s
+
+domains:
+  - app_demos
+  - tutorials
+  - software_reviews
+  - bug_reports
+  - ux_prototyping

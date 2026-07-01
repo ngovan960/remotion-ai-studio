@@ -1,0 +1,40 @@
+name: timeline
+description: "Timeline visualization for chronological data, history sequences, and event progression"
+version: "1.0.0"
+
+asset_types:
+  - timeline_data
+  - milestone_icons
+  - background_pattern
+
+camera_rules:
+  - type: pan
+    direction: horizontal
+    speed: slow
+    description: "Pan along timeline to reveal events sequentially"
+  - type: dolly
+    direction: in
+    speed: medium
+    description: "Zoom into specific timeline segment for detail"
+  - type: static
+    description: "Hold on complete timeline for overview"
+  - type: zoom
+    direction: in
+    speed: slow
+    description: "Slow zoom into key milestone"
+
+prompt_template: |
+  [Speed] [Camera] shot of [timeline type] timeline:
+  - Events: [event list]
+  - Style: [visual style]
+  - Color scheme: [colors]
+  - Animation: [reveal type]
+  - Duration: [seconds]s
+  - Mood: [mood]
+
+domains:
+  - history
+  - project_management
+  - biography
+  - technology_evolution
+  - scientific_progress

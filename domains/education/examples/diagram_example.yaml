@@ -1,0 +1,89 @@
+scene:
+  type: diagram
+  title: "Data Types in Python"
+  learning_objective: "Understand different data types"
+  audience_level: "beginner"
+  
+visual:
+  style: "conceptual_diagram"
+  elements:
+    - type: "title_slide"
+      content: "Python Data Types"
+      subtitle: "Understanding different kinds of data"
+    - type: "mind_map"
+      center: "Data Types"
+      branches:
+        - name: "Numeric"
+          items: ["int", "float", "complex"]
+          color: "blue"
+        - name: "Text"
+          items: ["str"]
+          color: "green"
+        - name: "Sequence"
+          items: ["list", "tuple", "range"]
+          color: "yellow"
+        - name: "Mapping"
+          items: ["dict"]
+          color: "red"
+        - name: "Set"
+          items: ["set", "frozenset"]
+          color: "purple"
+    - type: "code_example"
+      language: "python"
+      code: |
+        # Numeric types
+        age = 25          # int
+        price = 19.99     # float
+        
+        # Text type
+        name = "Alice"    # str
+        
+        # Sequence types
+        colors = ["red", "green"]  # list
+        point = (10, 20)           # tuple
+        
+        # Mapping type
+        person = {"name": "Bob"}   # dict
+        
+        # Set type
+        unique = {1, 2, 3}        # set
+    - type: "summary_slide"
+      points:
+        - "int: Whole numbers"
+        - "float: Decimal numbers"
+        - "str: Text strings"
+        - "list: Ordered, mutable collections"
+        - "dict: Key-value pairs"
+
+camera:
+  movement: "slow_pan"
+  direction: "center_to_edges"
+  speed: 0.2
+  focus: "branch_explanation"
+
+audio:
+  voiceover:
+    content: |
+      "Python has several built-in data types.
+      Numeric types include integers and floats.
+      Text is stored as strings.
+      Sequences can be lists or tuples.
+      Dictionaries store key-value pairs.
+      Sets contain unique elements."
+    pace: "moderate"
+    tone: "informative"
+  music:
+    type: "ambient_study"
+    volume: -20
+  sfx:
+    - type: "notification_sound"
+      timing: "on_branch_expand"
+
+duration: 10
+render_quality: "high"
+learning_checkpoints:
+  - "Identifying numeric types"
+  - "Understanding text strings"
+  - "Recognizing sequence types"
+  - "Using dictionaries"
+  - "Working with sets"

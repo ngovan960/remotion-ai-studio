@@ -1,0 +1,22 @@
+{
+  "type": "code",
+  "language": "javascript",
+  "theme": "dark+",
+  "code": "function fibonacci(n) {\n  if (n <= 1) return n;\n  \n  let a = 0, b = 1;\n  for (let i = 2; i <= n; i++) {\n    [a, b] = [b, a + b];\n  }\n  return b;\n}",
+  "highlights": [
+    {"lines": [1], "color": "#FFD700", "label": "Function definition"},
+    {"lines": [5, 6], "color": "#4CAF50", "label": "Core algorithm"}
+  ],
+  "annotations": [
+    {"line": 2, "text": "Base case for recursion"},
+    {"line": 5, "text": "Iterative approach for efficiency"}
+  ],
+  "camera": {
+    "initial": "full_code",
+    "transitions": ["zoom_to_highlights"]
+  },
+  "animation": {
+    "reveal": "typewriter",
+    "speed": 30
+  }
+}

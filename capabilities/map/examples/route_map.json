@@ -1,0 +1,35 @@
+{
+  "type": "map",
+  "style": "terrain",
+  "region": {
+    "center": [10.7626, 106.6602],
+    "zoom": 6
+  },
+  "route": {
+    "points": [
+      {"lat": 10.8231, "lng": 106.6297, "label": "Ho Chi Minh City"},
+      {"lat": 16.0544, "lng": 108.2022, "label": "Da Nang"},
+      {"lat": 21.0285, "lng": 105.8542, "label": "Hanoi"}
+    ],
+    "color": "#2196F3",
+    "animated": true
+  },
+  "markers": [
+    {
+      "lat": 10.8231, "lng": 106.6297,
+      "label": "Start",
+      "type": "pin",
+      "color": "#4CAF50"
+    },
+    {
+      "lat": 21.0285, "lng": 105.8542,
+      "label": "End",
+      "type": "pin",
+      "color": "#F44336"
+    }
+  ],
+  "camera": {
+    "initial": "overview",
+    "transitions": ["follow_route", "zoom_to_markers"]
+  }
+}

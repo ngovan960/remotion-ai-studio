@@ -1,0 +1,32 @@
+{
+  "type": "chart",
+  "chart_type": "bar",
+  "data": {
+    "labels": ["Q1", "Q2", "Q3", "Q4"],
+    "datasets": [
+      {
+        "label": "Revenue",
+        "values": [45, 72, 89, 95],
+        "color": "#2196F3"
+      },
+      {
+        "label": "Profit",
+        "values": [12, 28, 35, 42],
+        "color": "#4CAF50"
+      }
+    ]
+  },
+  "axes": {
+    "x": {"label": "Quarter"},
+    "y": {"label": "Amount ($M)"}
+  },
+  "camera": {
+    "initial": "static",
+    "transitions": ["dolly_in_q4"]
+  },
+  "animation": {
+    "reveal": "grow_up",
+    "stagger": 0.1,
+    "duration": 0.5
+  }
+}

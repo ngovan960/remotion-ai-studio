@@ -1,0 +1,58 @@
+domain: education
+version: 1.0.0
+description: Educational content domain for tutorials, lectures, and instructional videos
+
+asset_strategy:
+  image_sources:
+    - slides
+    - diagrams
+    - code_screenshots
+    - educational_illustrations
+    - stock_photos
+  video_sources:
+    - screen_recordings
+    - animations
+    - demonstrations
+    - talking_head
+  style: clear_instructive
+  color_palette: professional
+  text_overlay: educational
+
+camera_rules:
+  default_movement: static
+  transitions:
+    - fade
+    - cut
+    - slide
+  speed: normal
+  shake: none
+  parallax: minimal
+
+audio_rules:
+  background_music:
+    - ambient_study
+    - lofi_beats
+    - minimal_piano
+  sfx:
+    - notification_sounds
+    - success_chimes
+    - transition_sounds
+  voiceover: required
+  music_volume: -18dB
+  voiceover_volume: -3dB
+
+render_rules:
+  resolution: 1920x1080
+  fps: 30
+  codec: h264
+  quality: high
+  duration_per_scene: 5-10s
+  max_duration: 600s
+
+quality_rules:
+  min_image_resolution: 1920x1080
+  text_readability: mandatory
+  audio_sync: required
+  pacing: moderate
+  engagement_check: required
+  learning_objective_check: required

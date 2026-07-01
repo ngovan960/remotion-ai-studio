@@ -1,0 +1,55 @@
+domain: documentary
+version: 1.0.0
+description: Base documentary domain for factual storytelling
+
+asset_strategy:
+  image_sources:
+    - unsplash
+    - pexels
+    - local_library
+    - generated_illustrations
+  video_sources:
+    - stock_footage
+    - generated_scenes
+    - photo_montages
+  style: realistic
+  color_palette: natural
+  text_overlay: minimal
+
+camera_rules:
+  default_movement: slow_pan
+  transitions:
+    - crossfade
+    - dip_to_black
+    - slow_zoom
+  speed: 0.3x
+  shake: none
+  parallax: enabled
+
+audio_rules:
+  background_music:
+    - ambient
+    - orchestral_subtle
+    - piano
+  sfx:
+    - nature_sounds
+    - city_ambience
+    - subtle_transitions
+  voiceover: required
+  music_volume: -12dB
+  voiceover_volume: -3dB
+
+render_rules:
+  resolution: 1920x1080
+  fps: 30
+  codec: h264
+  quality: high
+  duration_per_scene: 8-15s
+  max_duration: 300s
+
+quality_rules:
+  min_image_resolution: 1920x1080
+  text_readability: required
+  audio_sync: mandatory
+  pacing: moderate
+  engagement_check: required

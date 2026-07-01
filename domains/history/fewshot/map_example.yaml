@@ -1,0 +1,65 @@
+scene:
+  type: map
+  title: "Roman Empire Expansion"
+  time_period: "27 BC - 476 AD"
+  
+visual:
+  style: "animated_political_map"
+  base_map: "mediterranean_region"
+  layers:
+    - name: "borders"
+      type: "political_boundaries"
+      color: "gold"
+    - name: "territory"
+      type: "filled_regions"
+      color: "red"
+      opacity: 0.6
+    - name: "labels"
+      type: "place_names"
+      font: "period_appropriate"
+  markers:
+    - location: "Rome"
+      type: "capital"
+      icon: "eagle"
+    - location: "Constantinople"
+      type: "major_city"
+      icon: "city"
+  routes:
+    - from: "Rome"
+      to: "Gaul"
+      type: "military_campaign"
+      color: "red"
+
+camera:
+  movement: "slow_zoom"
+  target: "full_empire"
+  speed: 0.2
+  pan: "follow_expansion"
+
+audio:
+  music:
+    type: "roman_inspired"
+    instruments: ["lyre", "tibia", "tuba"]
+    mood: "triumphant"
+    volume: -10
+  sfx:
+    - type: "marching_legions"
+      volume: -15
+    - type: "construction_sounds"
+      volume: -20
+
+map:
+  animation:
+    type: "territory_expansion"
+    speed: "slow"
+    key_dates:
+      - "27 BC: Augustus becomes Emperor"
+      - "117 AD: Maximum extent"
+      - "476 AD: Fall of Western Empire"
+  zoom_levels:
+    - "overview: full_empire"
+    - "region: specific_provinces"
+    - "city: major_urban_centers"
+
+duration: 12
+render_quality: "high"

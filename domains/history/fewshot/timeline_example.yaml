@@ -1,0 +1,50 @@
+scene:
+  type: timeline
+  title: "World War II Major Events"
+  time_period: "1939-1945"
+  
+visual:
+  style: "interactive_timeline"
+  elements:
+    - type: "date_marker"
+      position: "start"
+      content: "September 1, 1939"
+      label: "Germany invades Poland"
+    - type: "event_icon"
+      position: "1940"
+      content: "Battle of Britain"
+      icon: "airplane"
+    - type: "highlight"
+      position: "1941"
+      content: "Pearl Harbor Attack"
+      color: "red"
+    - type: "connection_line"
+      from: "1939"
+      to: "1945"
+      label: "Global Conflict"
+
+camera:
+  movement: "slow_pan"
+  direction: "left_to_right"
+  speed: 0.3
+  zoom: "subtle"
+
+audio:
+  music:
+    type: "period_orchestral"
+    mood: "dramatic"
+    volume: -12
+  sfx:
+    - type: "marching_sounds"
+      volume: -18
+    - type: "distant_explosions"
+      volume: -24
+
+timeline:
+  type: "linear"
+  zoom_level: "overview"
+  annotations: true
+  highlights: ["1941", "1944", "1945"]
+
+duration: 15
+render_quality: "high"
