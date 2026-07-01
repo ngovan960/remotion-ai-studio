@@ -37,7 +37,7 @@ class FluxModel:
             )
             
             self.pipe_txt2img = FluxPipeline.from_pretrained(
-                self.model_path,
+                "black-forest-labs/FLUX.1-dev",
                 transformer=transformer,
                 torch_dtype=torch.bfloat16
             )
