@@ -81,28 +81,28 @@ echo "[6/6] Downloading models (Phương án 1: Chất lượng Tuyệt đối).
 
 # FLUX (GGUF - LIGHT & FAST)
 echo "→ FLUX.1-dev (GGUF Q8 + VAE + Text Encoders)..."
-huggingface-cli download lllyasviel/FLUX.1-dev-gguf \
+hf download lllyasviel/FLUX.1-dev-gguf \
   --exclude "*Q2_K*" "*Q3_K*" "*Q4_K*" "*Q5_K*" "*Q6_K*" "*Q8_1*" "*schnell*" \
   --local-dir modelAI/flux 
 
 # WAN 2.2 5B (Chất lượng Tuyệt đối)
 echo "→ Wan 2.2 5B (FP8 optimized)..."
-huggingface-cli download shunyang90/Wan2.2-TI2V-5B-ModelOpt-FP8 \
+hf download shunyang90/Wan2.2-TI2V-5B-ModelOpt-FP8 \
   --local-dir modelAI/wan 
 
 # Fish Speech
 echo "→ Fish Speech 1.5..."
-huggingface-cli download fishaudio/fish-speech-1.5 \
+hf download fishaudio/fish-speech-1.5 \
   --local-dir modelAI/fish 
 
 # MusicGen (Large - Chất lượng Tuyệt đối)
 echo "→ MusicGen Large..."
-huggingface-cli download facebook/musicgen-large \
+hf download facebook/musicgen-large \
   --local-dir modelAI/musicgen 
 
 # AudioGen
 echo "→ AudioGen medium..."
-huggingface-cli download facebook/audiogen-medium \
+hf download facebook/audiogen-medium \
   --local-dir modelAI/audiogen 
 
 echo ""
