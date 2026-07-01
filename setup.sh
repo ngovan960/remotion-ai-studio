@@ -82,11 +82,11 @@ echo "[6/6] Downloading models (Phương án 1: Chất lượng Tuyệt đối).
 # FLUX (GGUF - LIGHT & FAST)
 echo "→ FLUX.1-dev (GGUF Q8 + VAE + Text Encoders)..."
 hf download lllyasviel/FLUX.1-dev-gguf \
-  --exclude "*Q2_K*" \
-  --exclude "*Q3_K*" \
-  --exclude "*Q4_K*" \
-  --exclude "*Q5_K*" \
-  --exclude "*Q6_K*" \
+  --exclude "*Q2*" \
+  --exclude "*Q3*" \
+  --exclude "*Q4*" \
+  --exclude "*Q5*" \
+  --exclude "*Q6*" \
   --exclude "*Q8_1*" \
   --exclude "*schnell*" \
   --exclude "*F16.gguf" \
