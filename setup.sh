@@ -82,7 +82,15 @@ echo "[6/6] Downloading models (Phương án 1: Chất lượng Tuyệt đối).
 # FLUX (GGUF - LIGHT & FAST)
 echo "→ FLUX.1-dev (GGUF Q8 + VAE + Text Encoders)..."
 hf download lllyasviel/FLUX.1-dev-gguf \
-  --exclude "*Q2_K*" "*Q3_K*" "*Q4_K*" "*Q5_K*" "*Q6_K*" "*Q8_1*" "*schnell*" "*F16.gguf" "*t5xxl_fp16.safetensors*" \
+  --exclude "*Q2_K*" \
+  --exclude "*Q3_K*" \
+  --exclude "*Q4_K*" \
+  --exclude "*Q5_K*" \
+  --exclude "*Q6_K*" \
+  --exclude "*Q8_1*" \
+  --exclude "*schnell*" \
+  --exclude "*F16.gguf" \
+  --exclude "*t5xxl_fp16.safetensors*" \
   --local-dir modelAI/flux 
 
 # WAN 2.2 5B (Chất lượng Tuyệt đối)
@@ -98,7 +106,8 @@ hf download fishaudio/fish-speech-1.5 \
 # MusicGen (Large - Chất lượng Tuyệt đối)
 echo "→ MusicGen Large..."
 hf download facebook/musicgen-large \
-  --exclude "*.safetensors" "pytorch_model*" \
+  --exclude "*.safetensors" \
+  --exclude "pytorch_model*" \
   --local-dir modelAI/musicgen 
 
 # AudioGen
