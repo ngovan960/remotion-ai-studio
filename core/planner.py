@@ -98,22 +98,101 @@ class Planner:
     # ── Asset planning ───────────────────────────────────────
 
     def _plan_assets(self, scenes: list, capabilities: list, domain_config: dict) -> list:
-        """Tính toán assets cần thiết cho mỗi scene"""
+        """Tính toán assets cần thiết cho mỗi scene tuân theo công thức phân phối tỷ lệ"""
         assets = []
         asset_id = 0
 
-        typical = domain_config.get("typical_assets", [])
+        N = len(scenes)
+        formula = CoreConfig.DEFAULT_COMPOSITION_FORMULA
 
-        for scene in scenes:
+        # Tính số lượng cảnh cho từng loại hình ảnh/video chính
+        num_video = max(1, int(N * formula["video_clip"]))
+        num_animation = max(1, int(N * formula["animation"]))
+        num_infographic = max(1, int(N * formula["infographic"]))
+        num_image = max(1, N - num_video - num_animation - num_infographic)
+
+        # Sắp xếp các cảnh theo độ ưu tiên quan trọng của phân đoạn để phân phối visual asset phù hợp
+        # Climax và Hook ưu tiên video_clip, Setup/Conflict ưu tiên animation/image, Resolution ưu tiên infographic/image
+        act_priority_map = {
+            "climax": 0,
+            "hook": 1,
+            "conflict": 2,
+            "setup": 3,
+            "resolution": 4
+        }
+        scenes_sorted = sorted(scenes, key=lambda s: act_priority_map.get(s["act"], 2))
+
+        scene_visual_mapping = {}
+        
+        # Phân phối lần lượt các asset theo thứ tự ưu tiên
+        video_left = num_video
+        animation_left = num_animation
+        infographic_left = num_infographic
+        image_left = num_image
+
+        for scene in scenes_sorted:
             act = scene["act"]
+            if act == "climax" and video_left > 0:
+                visual = "video_clip"
+                video_left -= 1
+            elif act == "hook" and video_left > 0:
+                visual = "video_clip"
+                video_left -= 1
+            elif act == "resolution" and infographic_left > 0:
+                visual = "infographic"
+                infographic_left -= 1
+            elif video_left > 0:
+                visual = "video_clip"
+                video_left -= 1
+            elif animation_left > 0:
+                visual = "animation"
+                animation_left -= 1
+            elif infographic_left > 0:
+                visual = "infographic"
+                infographic_left -= 1
+            else:
+                visual = "image"
+                image_left -= 1
+            scene_visual_mapping[scene["id"]] = visual
 
-            base_assets = self._base_assets_for_act(act, capabilities, typical)
+        # Sinh các asset chi tiết cho từng scene
+        for scene in scenes:
+            scene_id = scene["id"]
+            act = scene["act"]
+            primary_visual = scene_visual_mapping[scene_id]
 
-            for asset_type in base_assets:
+            scene_assets = []
+            
+            # Thêm visual asset chính
+            if primary_visual == "infographic":
+                # Lựa chọn loại infographic phù hợp dựa trên capabilities hoặc mặc định
+                if "timeline" in capabilities:
+                    scene_assets.append("timeline")
+                elif "map" in capabilities:
+                    scene_assets.append("map")
+                elif "chart" in capabilities:
+                    scene_assets.append("chart")
+                else:
+                    scene_assets.append("timeline")
+            else:
+                scene_assets.append(primary_visual)
+
+            # Luôn thêm các thành phần phụ trợ (text overlay, voiceover, audio) theo phân cảnh
+            if act in ("hook", "resolution"):
+                scene_assets.append("text_overlay")
+                scene_assets.append("audio")
+            else:
+                scene_assets.append("voiceover")
+
+            if act == "climax" and "audio" not in scene_assets:
+                scene_assets.append("audio")
+
+            # Ghi nhận các asset vào kế hoạch sản xuất
+            for asset_type in scene_assets:
                 asset_id += 1
                 assets.append({
                     "id": f"asset_{asset_id:04d}",
-                    "scene_id": scene["id"],
+                    "scene_id": scene_id,
                     "type": asset_type,
                     "priority": self._asset_priority(asset_type, act),
                     "estimated_gen_time_sec": self._estimate_gen_time(asset_type),

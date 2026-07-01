@@ -10,7 +10,10 @@ from pathlib import Path
 import json
 
 class FluxModel:
-    def __init__(self, model_path="black-forest-labs/FLUX.1-dev", device="cuda"):
+    def __init__(self, model_path="modelAI/flux", device="cuda"):
+        # Fallback to HF online repo if local folder doesn't exist
+        if not Path(model_path).exists():
+            model_path = "black-forest-labs/FLUX.1-dev"
         self.model_path = model_path
         self.device = device
         self.pipe_txt2img = None
@@ -19,12 +22,32 @@ class FluxModel:
     
     def load(self):
         """Load Flux model"""
-        print("Loading Flux.1 Dev...")
+        print(f"Loading Flux.1 Dev from {self.model_path}...")
         
-        self.pipe_txt2img = FluxPipeline.from_pretrained(
-            self.model_path,
-            torch_dtype=torch.bfloat16
-        )
+        # Check if we have a local GGUF file
+        gguf_file = Path(self.model_path) / "flux1-dev-Q8_0.gguf"
+        if gguf_file.exists():
+            print(f"Found local GGUF model: {gguf_file}. Loading with GGUF support...")
+            from diffusers import FluxTransformer2DModel, GGUFQuantizationConfig
+            
+            transformer = FluxTransformer2DModel.from_single_file(
+                str(gguf_file),
+                quantization_config=GGUFQuantizationConfig(compute_dtype=torch.bfloat16),
+                torch_dtype=torch.bfloat16
+            )
+            
+            self.pipe_txt2img = FluxPipeline.from_pretrained(
+                self.model_path,
+                transformer=transformer,
+                torch_dtype=torch.bfloat16
+            )
+        else:
+            print("GGUF model not found locally. Loading standard pipeline...")
+            self.pipe_txt2img = FluxPipeline.from_pretrained(
+                self.model_path,
+                torch_dtype=torch.bfloat16
+            )
+        
         self.pipe_txt2img = self.pipe_txt2img.to(self.device)
         self.pipe_txt2img.enable_model_cpu_offload()
         

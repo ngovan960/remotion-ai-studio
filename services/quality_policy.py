@@ -202,6 +202,9 @@ class QualityPolicy:
 
         render_rules = domain_manifest.get("render_rules", {})
         max_dur = render_rules.get("max_duration", 1800)
+        if isinstance(max_dur, str):
+            max_dur = int(max_dur.rstrip('s'))
+            
         plan_dur = plan.get("duration_seconds", 0)
         self._record(
             "domain_max_duration",

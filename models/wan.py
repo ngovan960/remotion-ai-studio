@@ -9,14 +9,16 @@ from pathlib import Path
 import imageio
 
 class WanModel:
-    def __init__(self, model_path="Wan-AI/Wan2.2-TI2V-5B", device="cuda"):
+    def __init__(self, model_path="modelAI/wan", device="cuda"):
+        if not Path(model_path).exists():
+            model_path = "Wan-AI/Wan2.2-TI2V-5B"
         self.model_path = model_path
         self.device = device
         self.pipe = None
     
     def load(self):
         """Load Wan 2.2 5B model - optimal for RTX 3090"""
-        print("Loading Wan 2.2 5B (FP8)...")
+        print(f"Loading Wan 2.2 5B from {self.model_path}...")
         
         from diffusers import WanPipeline
         
@@ -24,6 +26,12 @@ class WanModel:
             self.model_path,
             torch_dtype=torch.bfloat16
         )
+        
+        # Cast transformer to FP8 (float8_e4m3fn) to match FP8 VRAM usage (~10 GB)
+        if hasattr(self.pipe, "transformer"):
+            print("  Quantizing Wan transformer to FP8 (float8_e4m3fn)...")
+            self.pipe.transformer.to(torch.float8_e4m3fn)
+            
         self.pipe = self.pipe.to(self.device)
         
         # RTX 3090 optimizations

@@ -81,6 +81,14 @@ class CoreConfig:
     PRIORITY_MEDIUM = 2
     PRIORITY_LOW = 3
 
+    # ── Video Composition Formula (Quality/Cost Balance) ─────
+    DEFAULT_COMPOSITION_FORMULA = {
+        "video_clip": 0.30,      # Wan Video (30%)
+        "image": 0.35,           # Flux Image (35%)
+        "animation": 0.25,       # Remotion Animation (25%)
+        "infographic": 0.10,     # Infographic (10%)
+    }
+
     # ── Quality thresholds ───────────────────────────────────
     MAX_PROMPT_LENGTH = 500
     MIN_PROMPT_LENGTH = 10
